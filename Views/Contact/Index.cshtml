@@ -32,7 +32,8 @@
             <p class="flow-text">Por favor, preencha o formulário abaixo com suas informações de contato e sua
                 mensagem e um membro de
                 nossa equipe entrará em contato com você o mais breve possível.</p>
-            <form action="" method="post">
+            <form asp-controller="Contact" asp-action="Register" method="post">
+
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">account_circle</i>
                     <input type="text" name="name" class="validade" maxlength="120">
