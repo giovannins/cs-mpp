@@ -2,7 +2,151 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="text-center">
+    <h1 class="red-text text-accent-4">Massas pré assadas</h1>
+</section>
+
+<section>
+    <article>
+        <div class="row text grey-text text-darken-2">
+            <div class="col s12 l6">
+                <p class="flow-text">
+                    Com Ingredientes de 1ª linha, feito artesanalmente, pré assada em pedra, com aparência de forno
+                    a
+                    lenha,
+                    sabor e aroma inigualáveis.
+                </p>
+            </div>
+            <div class="col s12 l6">
+                <ul class="collection">
+                    <li class="collection-item"><i
+                            class="material-icons left yellow-text text-accent-4">question_mark</i>Procurando um bom
+                        Pizzaiolo mais não encontra. Quando encontra, falta Compromisso?</li>
+                    <li class="collection-item"><i
+                            class="material-icons left yellow-text text-accent-4">question_mark</i>O dia tem uma
+                        Alta Demanda sua Cozinha não dá Conta? </li>
+                    <li class="collection-item"><i
+                            class="material-icons left yellow-text text-accent-4">question_mark</i>O Espaço que você
+                        tem em sua Pizzaria é Pequeno?</li>
+                    <li class="collection-item"><i
+                            class="material-icons left yellow-text text-accent-4">question_mark</i>Custo altíssimo
+                        em Equipamentos? </li>
+                    <li class="collection-item"><i
+                            class="material-icons left yellow-text text-accent-4">question_mark</i>Já Pensou em
+                        Comprar seus Discos Pré Assados? </li>
+                    <li class="collection-item"><i class="material-icons left green-text text-accent-4">check</i>Redução
+                        de custos ,
+                        Agilidade. A Tranquilidade em ter Sempre sua Massa </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <article class="grey-text text-darken-2">
+        <p class="flow-text">
+            Procurando por uma massa pré-assada de qualidade superior, feita com ingredientes de primeira linha e
+            preparada artesanalmente?
+            Não procure mais! Nossa massa pré-assada é preparada em uma cozinha industrial usando apenas os melhores
+            ingredientes, pré-assada em pedra para obter a aparência autêntica de um forno a lenha.
+        </p>
+    </article>
+</section>
+<section>
+    <article class="row">
+
+
+        <div class="col s12 m6 l4">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s2">
+                        <img class="circle responsive-img" src="~/imgs/pessoas-foto/01.jpg" alt="">
+                    </div>
+                    <div class="col s10">
+                        <span class="black-text">
+                            As massas de pizza pré-assadas deste comércio são simplesmente incríveis! Elas garantem
+                            uma pizza crocante e saborosa em poucos minutos.
+                        </span>
+                        <hr>
+                        <strong class="bold red-text text-accent-4">Maria Santos</strong> <br>
+                        <small>
+                            Educadora Física
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s2">
+                        <img class="circle responsive-img" src="~/imgs/pessoas-foto/02.jpg" alt="">
+                    </div>
+                    <div class="col s10">
+                        <span class="black-text">
+                            Elas são ideais para quem quer uma pizza caseira, mas não tem tempo ou habilidade para
+                            fazer a massa do zero.
+                        </span>
+                        <hr>
+                        <strong class="bold red-text text-accent-4">João da Silva</strong> <br>
+                        <small>
+                            Pizzaiolo
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s2">
+                        <img class="circle responsive-img" src="~/imgs/pessoas-foto/03.jpg" alt="">
+                    </div>
+                    <div class="col s10">
+                        <span class="black-text">
+                            Se você procura por massas pré-assadas de qualidade, este é o lugar certo! As massas são
+                            perfeitas para quem quer uma pizza rápida e saborosa. Além disso, o atendimento é
+                            excelente
+                        </span>
+                        <hr>
+                        <strong class="bold red-text text-accent-4">Juliana Costa</strong> <br>
+                        <small>
+                            Enfermeira
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="grey-text text-darken-2">
+        <p class="flow-text">
+            Além disso, nosso processo de produção garante um sabor e aroma inigualáveis, que vão encantar até mesmo
+            os paladares mais exigentes. Se você procura uma massa pré-assada de qualidade superior para suas
+            receitas, você encontrou o lugar certo.
+        </p>
+    </article>
+</section>
+
+
+@section CSS {
+    <style>
+        header {
+            display: block;
+            background-image: url('/imgs/background/1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 256px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+    </style>
+
+}

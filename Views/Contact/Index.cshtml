@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Contato";
+}
+
+<section>
+    <article class="row">
+        <div class="col s12 l6 grey-text text-darken-2">
+            <h2 class="red-text text-accent-4">Contato</h2>
+            <p class="flow-text">Se você preferir entrar em contato conosco de outra forma, sinta-se à vontade para
+                enviar um e-mail
+                ou ligar.</p>
+            <ul class="collection">
+                <li class="collection-item black-text"><i class="material-icons left">email</i>vendas@pizzaspre.com.br
+                </li>
+                <li class="collection-item black-text"><i class="material-icons left">phone</i>+55 (11) 93015-0000
+                </li>
+                <li class="collection-item black-text"><i class="material-icons left">room</i>Av. Benedito Lopes da
+                    Silva, 799,
+                    Jd. Cipava, Osasco</li>
+                <li class="collection-item black-text"><i class="material-icons left">schedule</i>Segunda a Sexta
+                    das 09.00h.
+                    as 17.00h.</li>
+            </ul>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14629.676419561809!2d-46.8060314128418!3d-23.55338669999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceff82ac2e5555%3A0xf218e0119ad38ce6!2sMassa%20para%20Pizza!5e0!3m2!1spt-BR!2sbr!4v1683124645688!5m2!1spt-BR!2sbr"
+                width="auto" height="300px" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="section col s12 l6 grey-text text-darken-2">
+            <h3 class="center-align red-text text-accent-4">Formulário de contato</h3>
+            <p class="flow-text">Por favor, preencha o formulário abaixo com suas informações de contato e sua
+                mensagem e um membro de
+                nossa equipe entrará em contato com você o mais breve possível.</p>
+            <form action="" method="post">
+                <div class="input-field col s12 black-text">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input type="text" name="name" class="validade" maxlength="120">
+                    <label class="black-text" for="name">Nome completo</label>
+                </div>
+
+                <div class="input-field col s12 black-text">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" name="email" class="validade" maxlength="255">
+                    <label class="black-text" for="email">Email</label>
+                </div>
+
+                <div class="input-field col s12 black-text">
+                    <i class="material-icons prefix">phone</i>
+                    <input type="tel" name="phone" class="validade" maxlength="15">
+                    <label class="black-text" for="phone">Telefone</label>
+                </div>
+
+                <button type="submit" class="btn red darken-4">Enviar <i class="material-icons left">send</i></button>
+
+            </form>
+
+        </div>
+    </article>
+</section>

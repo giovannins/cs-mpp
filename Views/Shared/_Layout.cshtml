@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - cs_mpp</title>
+    <title>@ViewData["Title"] - Massas para pizzas</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/materialize/css/materialize.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -16,24 +16,19 @@
 
         <nav>
             <div class="nav-wrapper red darken-4">
-                <a class="brand-logo" asp-area="" asp-controller="Home" asp-action="Index">cs_mpp</a>
+                <a class="brand-logo" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/imgs/Logo.png" alt="Massas para pizzas" width="64px">
+                </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li>
-                        <a asp-area="" asp-controller="About" asp-action="Index">Sobre nós</a>
-                    </li>
+                    <partial name="_NavbarLinksPartial" />
                     @* <partial name="_LoginPartial" /> *@
                 </ul>
             </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li>
-                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>
+            <partial name="_NavbarLinksPartial" />
         </ul>
     </header>
     <div class="container">
@@ -46,9 +41,10 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                        content.</p>
+                    <h5 class="white-text">Massas pré assadas</h5>
+                    <p class="grey-text text-lighten-4">Deixe-nos cuidar da base, enquanto você solta sua criatividade.
+                        Nossas massas de pizza pré-assadas são o segredo para uma pizza caseira e profissional rápida e
+                        saborosa.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
@@ -64,8 +60,11 @@
         </div>
         <div class="footer-copyright red darken-4">
             <div class="container">
-                &copy; 2023 Massas para Pizza
-                <a class="grey-text text-lighten-3" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                &copy; 2023 Massas para pizzas
+                <span class="right">
+                    <a class="grey-text text-lighten-3" asp-area="" asp-controller="Home"
+                        asp-action="Privacy">Privacidade</a>
+                </span>
             </div>
         </div>
     </footer>
