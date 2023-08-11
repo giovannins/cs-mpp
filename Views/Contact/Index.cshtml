@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "Contato";
+    @model cs_mpp.Models.Contact;
 }
 
 <section>
@@ -36,19 +37,19 @@
 
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">account_circle</i>
-                    <input type="text" name="name" class="validade" maxlength="120">
-                    <label class="black-text" for="name">Nome completo</label>
+                    <input type="text" name="Name" asp-for="Name" class="validade" maxlength="120">
+                    <label class="black-text" for="Name">Nome completo</label>
                 </div>
 
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">email</i>
-                    <input type="email" name="email" class="validade" maxlength="255">
+                    <input type="email" name="email" asp-for="Email" class="validade" maxlength="255">
                     <label class="black-text" for="email">Email</label>
                 </div>
 
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">phone</i>
-                    <input type="tel" name="phone" class="validade" maxlength="15">
+                    <input type="tel" name="phone" asp-for="Phone" class="validade" maxlength="15">
                     <label class="black-text" for="phone">Telefone</label>
                 </div>
 
