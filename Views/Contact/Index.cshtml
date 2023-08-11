@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Contato";
     @model cs_mpp.Models.Contact;
+
 }
 
 <section>
@@ -60,3 +61,21 @@
         </div>
     </article>
 </section>
+
+@section Scripts {
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            M.toast({ html: '@TempData["SuccessMessage"]', classes: 'green' });
+        </script>
+    }
+
+
+    @if (TempData["FailMessage"] != null)
+    {
+        <script>
+            M.toast({ html: '@TempData["FailMessage"]', classes: 'red' });
+        </script>
+    }
+}
