@@ -1,60 +1,51 @@
 @{
     ViewData["Title"] = "Produtos";
+    @model List<Product>;
+
 }
 
 <h1>Nossos produtos</h1>
 
-<section class="row">
-    <?php foreach($produtos as $produto): ?>
-    <?php $imgs = explode(',', $produto['image']); ?>
-    <article class="col s12 m6 l4">
-        <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="<?= $imgs[0] ?>">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">
-                    <?= $produto['name']?><i class="material-icons right">more_vert</i>
-                </span>
-                <p>R$
-                    <?= $produto['price'] ?>
-                </p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    <?= $produto['name']?><i class="material-icons right">close</i>
-                </span>
+@if (Model.Count == 0)
+{
+    <h2>Não há produtos</h2>
+}
+else
+{
 
-                <?php
-                            $string = $produto['description'];
+    <section class="row">
+    @foreach (Product product in Model)
+        {
 
-                            // Divide a string em um array de palavras
-                            $palavras = explode(" ", $string);
+            <article class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="@product.Image">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">
+                            @product.Name<i class="material-icons right">more_vert</i>
+                        </span>
+                        <p>R$ @product.Price</p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">
+                            @product.Name<i class="material-icons right">close</i>
+                        </span>
+                        <p>
+                            @product.Description
+                        </p>
+                        <p>R$ @product.Price</p>
 
-                            // Obtém as 10 primeiras palavras do array
-                            $primeiras_palavras = array_slice($palavras, 0, 10);
+                        <p class="end">
+                            <a class="btn red darken-4" asp-controller="Product" asp-action="View" asp-route-id="@product.Id">
+                                <i class="material-icons left">remove_red_eye</i> Ver mais
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-                            // Junta as palavras novamente em uma string
-                            $resultado = implode(" ", $primeiras_palavras);
-                            ?>
-
-                <p>
-                    <?= $resultado ?>...
-                </p>
-                <p>R$
-                    <?= $produto['price'] ?>
-                </p>
-
-                <p class="end">
-                    <?= $this->Html->link('<i class="material-icons left">remove_red_eye</i> Ver mais',
-                                                ['controller' => 'Produto', 'action' => 'view', $produto['id']],
-                                                ['class' => 'btn red darken-4', 'escapeTitle' => false]
-                                                )
-                                                ?>
-                </p>
-            </div>
-        </div>
-    </article>
-    <?php endforeach; ?>
-</section>
-
+        }
+    </section>
+}
