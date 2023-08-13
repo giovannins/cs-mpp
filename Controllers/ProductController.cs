@@ -1,5 +1,6 @@
 using cs_mpp.Data;
 using cs_mpp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,13 @@ public class ProductController : Controller
         return View(product);
     }
 
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Edit()
+    {
+        List<Product> products = await _context.Products.ToListAsync();
+        products.ForEach(product => product.Image = GetOnlyTheFirstImage(product.Image));
+        return View(products);
+    } 
 
     // Funções de produtos
 
