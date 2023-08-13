@@ -25,6 +25,8 @@ public class ProductController : Controller
     public async Task<IActionResult> View(long id)
     {
         Product product = await _context.Products.FirstOrDefaultAsync(predicate: predicate => predicate.Id == id);
+        string[] imgList = product.Image.Split('|');
+        ViewBag.imgList = imgList;
         return View(product);
     }
 
