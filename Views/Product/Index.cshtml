@@ -26,7 +26,7 @@ else
                         <span class="card-title activator grey-text text-darken-4">
                             @product.Name<i class="material-icons right">more_vert</i>
                         </span>
-                        <p>R$ @product.Price</p>
+                        <p class="green-text text-darken-4">R$ @product.Price</p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">
@@ -35,7 +35,7 @@ else
                         <p>
                             @product.Description
                         </p>
-                        <p>R$ @product.Price</p>
+                        <p class="green-text text-darken-4">R$ @product.Price</p>
 
                         <p class="end">
                             <a class="btn red darken-4" asp-controller="Product" asp-action="View" asp-route-id="@product.Id">

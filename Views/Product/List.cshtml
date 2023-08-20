@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = $"Editar produtos";
+    @model List<Product>;
+}
+
+<button class="btn green"><i class="material-icons left">add</i> Novo produto</button>
+
+<section class="row">
+@foreach (Product produto in Model)
+{
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="@produto.Image">
+          <span class="card-title">@produto.Name</span>
+        </div>
+        <div class="card-content">
+            <div>
+          <p>@produto.Description</p>
+            </div>
+            <div>
+                <p class="green-text text-darken-4">R$ @produto.Price</p>
+            </div>
+        </div>
+         <div class="card-action">
+          <a asp-area="" asp-controller="Product" asp-action="Edit" asp-route-id="@produto.Id" class="waves-effect waves-yellow btn orange black-text"><i class="material-icons left">edit</i>Editar</a>
+          <button href="#" class="waves-effect waves-red btn red darken-4" onclick="deleteProduct(@produto.Id)"><i class="material-icons left">delete</i>Deletar</button>
+        </div>
+      </div>
+    </div>
+    
+}
+</section>
+
+@section Scripts
+{
+    <script>
+        function deleteProduct(id)
+        {
+            const text = "Realmente deseja deletar o produto?";
+            if (confirm(text) == true)
+            {
+                alert(`Produto ${id} deletado!`);
+            }
+        }
+    </script>
+}

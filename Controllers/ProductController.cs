@@ -32,12 +32,22 @@ public class ProductController : Controller
     }
 
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Edit()
+    public async Task<IActionResult> List()
     {
         List<Product> products = await _context.Products.ToListAsync();
         products.ForEach(product => product.Image = GetOnlyTheFirstImage(product.Image));
         return View(products);
-    } 
+    }
+
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Edit(long id)
+    {
+        Product product = await _context.Products.FirstOrDefaultAsync(predicate: predicate => predicate.Id == id);
+        string[] imgList = product.Image.Split('|');
+        ViewBag.imgList = imgList;
+        return View(product);
+    }
+
 
     // Funções de produtos
 

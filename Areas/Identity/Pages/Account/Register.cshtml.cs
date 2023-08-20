@@ -120,6 +120,10 @@ namespace cs_mpp.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    if (user.UserName.Equals("gionneves@gmail.com"))
+                    {
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
