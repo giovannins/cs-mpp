@@ -48,6 +48,32 @@ public class ProductController : Controller
         return View(product);
     }
 
+    [HttpPost]
+    public IActionResult Upload(IFormFile file)
+    {
+        if (file != null && file.Length > 0)
+        {
+            string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imgs", "upload");
+            string filePath = Path.Combine(uploadPath, file.FileName);
+
+            if (!Directory.Exists(uploadPath))
+            {
+                Directory.CreateDirectory(uploadPath);
+            }
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                file.CopyTo(stream);
+            }
+
+            return Content("Arquivo carregado e salvo com sucesso.");
+        }
+        else
+        {
+            return Content("Nenhum arquivo foi carregado.");
+        }
+    }
+
 
     // Funções de produtos
 

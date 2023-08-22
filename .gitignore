@@ -479,3 +479,6 @@ $RECYCLE.BIN/
 # Dbeaver
 *-shm
 *-wal
+
+# Uploaded Files
+upload/
