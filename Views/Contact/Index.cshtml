@@ -34,24 +34,27 @@
             <p class="flow-text">Por favor, preencha o formulário abaixo com suas informações de contato e sua
                 mensagem e um membro de
                 nossa equipe entrará em contato com você o mais breve possível.</p>
-            <form asp-controller="Contact" asp-action="Register" method="post">
+            <form asp-controller="Contact" asp-action="Index" method="post">
 
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">account_circle</i>
                     <input type="text" name="Name" asp-for="Name" class="validade" maxlength="120">
                     <label class="black-text" for="Name">Nome completo</label>
+                    <span class="helper-text" data-error=@Html.ValidationMessageFor(model => model.Name)
                 </div>
 
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">email</i>
                     <input type="email" name="email" asp-for="Email" class="validade" maxlength="255">
                     <label class="black-text" for="email">Email</label>
+                    <span class="helper-text" data-error=@Html.ValidationMessageFor(model => model.Email)
                 </div>
 
                 <div class="input-field col s12 black-text">
                     <i class="material-icons prefix">phone</i>
                     <input type="tel" name="phone" asp-for="Phone" class="validade" maxlength="15">
                     <label class="black-text" for="phone">Telefone</label>
+                    <span class="helper-text" data-error=@Html.ValidationMessageFor(model => model.Phone)
                 </div>
 
                 <button type="submit" class="btn red darken-4">Enviar <i class="material-icons left">send</i></button>
