@@ -10,21 +10,67 @@
 </nav>
 
 <div class="row" style="margin-top: 2.5rem">
+
+    <div class="input-field col s12 m6">
+        <i class="material-icons prefix">title</i>
+        <input asp-for="Name" type="text" class="validate">
+        <label for="Name">Titulo</label>
+    </div>
+    <div class="input-field col s12 m6">
+        <i class="material-icons prefix">attach_money</i>
+        <input asp-for="Price" type="text" class="validate">
+        <label for="Price">Preço</label>
+    </div>
+
+</div>
+<div class="row">
+
+    <div class="input-field col s12 m6">
+        <i class="material-icons prefix">edit</i>
+        <textarea asp-for="Description" type="text" class="materialize-textarea"></textarea>
+        <label for="Description">Descrição</label>
+    </div>
+    <div class="input-field col s12 m6">
+        <i class="material-icons prefix">image</i>
+        <input asp-for="Image" type="text" class="validate">
+        <label for="Image">Imagems</label>
+    </div>
+
+</div>
+
+<div class="row">
+
     <div class="col s12 m6">
-        <div id="carouselDiv" class="carousel carousel-slider">
-            @foreach (string image in @ViewBag.imgList)
-            {
-                <img class="carousel-item" src="@image" alt="img" style="border-radius: .25rem;">
-            }
+
+        <div class="file-field input-field ">
+            <div class="waves-effect btn blue">
+                <i class="material-icons left">search</i>
+                <span>
+                    Buscar
+                </span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+        <div style="display: flex; justify-content: end;">
+            <button class="waves-effect btn yellow darken-4"><i class="material-icons left">upload</i> Enviar</button>
         </div>
     </div>
     <div class="col s12 m6">
-        <h2>@Model.Name</h2>
-        <div id="produtoInfo">
-            <h4 class="green-text text-darken-4">R$ @Model.Price</h4>
-            <p class="flow-text">@Model.Description</p>
-        </div>
+        @foreach (string image in @ViewBag.imgList)
+        {
+            <img class="image" src="@image" alt="img" style="border-radius: .25rem;">
+        }
     </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m6">
+        <button class="waves-effect btn green"><i class="material-icons left">save</i> Salvar</button>
+    </div>
+
 </div>
 
 @section CSS {
@@ -33,4 +79,35 @@
             color: #999999;
         }
     </style>
+}
+
+@section Scripts {
+    <script defer>
+        $(".image").on("click", (target) => {
+            var inputField = $("#Image").val();
+            var ctarget = $(target.currentTarget);
+
+            console.log(inputField)
+            inputField = processString(ctarget.attr("src"))
+            $("#Image").val(inputField)
+            ctarget.remove()
+            console.log(inputField)
+
+        })
+
+        function processString(inputString) {
+            const urls = inputString.split('|');
+            if (urls.length > 1) {
+                urls.shift(); // Remove a primeira URL
+            }
+
+            const processedString = urls.join('|');
+
+            if (processedString.startsWith('|')) {
+                return processedString.substring(1); // Remove o pipe inicial, se houver
+            } else {
+                return `${processedString}`; // Mantém apenas um pipe no início
+            }
+        }
+    </script>
 }
